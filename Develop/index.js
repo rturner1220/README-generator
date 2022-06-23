@@ -8,24 +8,24 @@ const generatorMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = () => {
  return inquirer.prompt([
-   {
-    type: 'input',
-    name: 'name',
-    message: 'What is your name?(Required)',
-    validate: nameInput => {
+    {
+     type: 'input',
+     name: 'name',
+     message: 'What is your name?(Required)',
+     validate: nameInput => {
         if(nameInput) {
-            return true;
+           return true;
         }else {
-            console.log('please enter your name!');
+          console.log('please enter your name!');
             return false;
         }
-     }
-   }, 
-     {
-    type: 'input',
-    name: 'title',
-    message: 'What is your project title?(Required)',
-    validate: titleInput => {
+      }
+    },
+    {
+     type: 'input',
+     name: 'title',
+     message: 'What is your project title?(Required)',
+     validate: titleInput => {
         if(titleInput) {
             return true;            
         }else {
@@ -34,8 +34,6 @@ const questions = () => {
         }
       }
    },
-
-   // Sections: descripcion 
    {
     type: 'input',
     name: 'description',
@@ -47,27 +45,10 @@ const questions = () => {
             console.log('You need to enter a project description!');
             return false;
         }
-      },
-    message: 'What was your motivation?',   
-    message: 'What problem does it solve?',   
-    message: 'What did you learn?',   
-   },
-   {
-    type: 'input',
-    name: 'description',
-    message: 'Why did you build this project?',
-    validate: descriptionInput => {
-        if(descriptionInput == 'because it was a homework assignment') {
-            return false;            
-        }else {
-            (descriptionInput) 
-                return true;
-        }
-      },
+      }
    },
 
    // table of contents(installation, usage. license, contribution, test)
-  
    {
     type: 'input',
     name: 'installation',
@@ -88,20 +69,7 @@ const questions = () => {
     name: 'tests',
     message: 'What command should be run to run tests?' 
    },
-   {
-    type: 'input',
-    name: 'license',
-    message: 'What kind of license should your project have?',
-    choices: ['Apache 2.0','MIT','BSD v3','ISC','Mozilla','GPL v3','None'], 
-    validate: licenseInput => {
-        if(licenseInput) {
-            return true;
-        }else {
-            console.log('Please enter your Lincense!');
-            return false;
-        }
-      },
-   },
+   
   // End of table of contents
 
    {
