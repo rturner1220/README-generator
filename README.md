@@ -1,27 +1,25 @@
 
   ### Profeasional Readme Generator
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   ### Licensing:
   [![license: AGPL_v3](https://img.shields.io/badge/license-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
   ## Table of contents:
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Questions](#questions) 
-  
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
   
   ### Visual Presentation
   
   https://github.com/rturner1220/README-generator/blob/main/readme-generator.gif
   
-
   https://drive.google.com/file/d/1YI6NtAiphKfjHIYoA-YLzSs1tWAP0RMt/view
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
   
-  
-
-
  ### Description
   * WHEN I am prompted for information about my application repository
     - THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage,       License, Contributing, Tests, and Questions
@@ -37,19 +35,19 @@
     - THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
   * WHEN I click on the links in the Table of Contents
     - THEN I am taken to the corresponding section of the README
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
   ### Installation:
   * Download it through Github
   * Ensure inquirer is installed  
-  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------  
   
   ### Usage:
   * Open terminal
   * Type 'node index.js'
   * Answer the prompts that follow
   * On success a README.md will be generated.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   ### Questions:
   - If you have any additional questions You can reach me at rmturner1220@gmail.com
