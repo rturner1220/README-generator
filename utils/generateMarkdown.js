@@ -4,22 +4,24 @@ function renderLicenseBadge(license) {
   let licenseType = license.license; 
   let yourLicense = ''
   if(licenseType === 'MIT') {
-    yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+    yourLicense = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
   } else if (licenseType === 'GPLv3') {
-    yourLicense = `![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+    yourLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
   } else if (licenseType === 'Apache 2.0') {
-    yourLicense = `![Apache 2.0 license](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+    yourLicense = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
   } else if (licenseType === 'BSD 3-Clause') {
-    yourLicense = `![BSD 3-Clause license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)`
+    yourLicense = `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
   } else if (licenseType === 'ISC') {
-    yourLicense = `![ISC license](https://img.shields.io/badge/License-ISC-blue.svg)`
+    yourLicense = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
   } else if (licenseType === 'MPL 2.0') {
-    yourLicense = `![MPL 2.0 license](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)`
+    yourLicense = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
   } else {
     license.license = "N/A"
   }
   return yourLicense;
-};
+}
+module.exports = renderLicenseBadge;
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -50,36 +52,15 @@ function renderLicenseLink(license) {
       }
     }
   }
+  module.exports = renderLicenseLink;
 
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  return `# ${data.title}
-  ## license
-  ${renderLicenseBadge(license)}`
-  };
-  const questions = {
-    type: 'input',
-    name: 'license',
-    message: 'What kind of license should your project have?',
-    choices: ['MIT','Apache 2.0',
-    'BSD 3-Clause','ISC','MPL 2.0','GPLv3','None'], 
-    validate: licenseInput => {
-        if(licenseInput) {
-            return true;
-        }else {
-            console.log('Please enter your Lincense!');
-            return false;
-        }
-     },
-  }
-
-    
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
- return` ${data.title}
-${data.badge}
+return`
+### <Your-Project-Title>
+${data.title}
+### Description
 ${data.description}
 ## Table of contents:
 * [Installation](#installation)
@@ -89,19 +70,18 @@ ${data.description}
 * [Questions](#questions) 
 ### Installation:
 In order to install the necessary dependencies, open the console and run the following:
-\`\`\`${data.installations}\`\`\`
+${data.installation}
 ### Usage:
 ${data.usage}
 ### License:
-This project is licensed under:
-${data.license}
+This project is licensed under the ${data.license} license 
 ### Contributing:
 ${data.contribute}
 ### Tests:
 In order to test open the console and run the following:
-\`\`\`${data.tests}\`\`\`
+${data.tests}
 ### Questions:
-If you have any questions reach me on [GitHub](https://github.com/${data.username}) or contact${data.name} at ${data.email}
+If you have any questions reach me on [GitHub](https://github.com/${data.github}/${data.title}) or contact me at ${data.email}
 `
 }
 

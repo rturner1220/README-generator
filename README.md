@@ -1,6 +1,8 @@
- d
-undefined
-d
+
+### <Your-Project-Title>
+README-generator
+### Description
+This project is about creating a more professional README for any user to view.
 ## Table of contents:
 * [Installation](#installation)
 * [Usage](#usage)
@@ -9,16 +11,15 @@ d
 * [Questions](#questions) 
 ### Installation:
 In order to install the necessary dependencies, open the console and run the following:
-```undefined```
+Install requirer
 ### Usage:
-d
+answer all the questions to create the file.
 ### License:
-This project is licensed under:
-undefined
+This project is licensed under the Apache 2.0 license 
 ### Contributing:
-d
+Nothing at this time
 ### Tests:
 In order to test open the console and run the following:
-```d```
+Node.js
 ### Questions:
-If you have any questions reach me on [GitHub](https://github.com/undefined) or contactrosa at dd
+If you have any questions reach me on [GitHub](https://github.com/rturner1220/README-generator) or contact me at rmturner1220@gmail.com

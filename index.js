@@ -3,7 +3,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-const generatorMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
+const renderLicenseBadge = require('./utils/generateMarkdown');
+const renderLicenseLink = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -56,8 +58,14 @@ const questions = [
    {
     type: 'input',
     name: 'usage',
-    message: 'Provide instructions and examples for use'
-   },  
+    message: 'Provide instructions and examples for use:'
+   }, 
+   {
+    type: 'checkbox',
+    name: 'license',
+    message: 'What kind of license should your project have?',
+    choices: ['MIT','Apache 2.0','BSD 3-Clause','ISC','MPL 2.0','GPLv3','None']
+   }, 
    {
     type: 'input',
     name: 'contribute',
@@ -124,13 +132,13 @@ function writeToFile(fileName, data) {
             console.log('Successfully created/wrote to generateReadMe.md')
         }
     })
-}
+}  
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then(function(data) {
-        writeToFile("README.md", generatorMarkdown(data));
+        writeToFile("README.md", generateMarkdown(data));
         console.log(data)
     })
 }
