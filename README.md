@@ -13,8 +13,9 @@
   
   
   ### Visual Presentation
-  readme-generator.gif
+  https://github.com/rturner1220/README-generator/blob/main/readme-generator.gif
   
+
   https://drive.google.com/file/d/1YI6NtAiphKfjHIYoA-YLzSs1tWAP0RMt/view
   
   
