@@ -2,10 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-
 const generateMarkdown = require('./utils/generateMarkdown');
-const renderLicenseBadge = require('./utils/generateMarkdown');
-const renderLicenseLink = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -61,15 +58,21 @@ const questions = [
     message: 'Provide instructions and examples for use:'
    }, 
    {
-    type: 'checkbox',
+    type: 'list',
     name: 'license',
     message: 'What kind of license should your project have?',
-    choices: ['MIT','Apache 2.0','BSD 3-Clause','ISC','MPL 2.0','GPLv3','None']
+    choices: ['gpl-3.0', 'agpl-3.0', 'lgpl-3.0', 'fdl-1.3', 'None'],
    }, 
+   {
+    type: 'list',
+    name: 'badge',
+    message: 'Select the same badge as the license:',
+    choices: ['GPLv3', 'AGPL_v3', 'LGPL_v3', 'FDL_v1.3', 'None'],
+   },
    {
     type: 'input',
     name: 'contribute',
-    message: 'What does the user need to know about contrubuting to the repo?'
+    message: 'How should people contribute to this project? '
    },
    {
     type: 'input',
@@ -123,15 +126,11 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err) {
-        console.log(fileName)
-        console.log(data)
-        if (err) {
-            return console.log(err)
-        }else {
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+            throw err;
             console.log('Successfully created/wrote to generateReadMe.md')
-        }
-    })
+        })
 }  
 
 // TODO: Create a function to initialize app
